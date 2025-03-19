@@ -1,43 +1,54 @@
 (() => {
 
-    function getMovieById( id: string ) {
+    // función para obtener información de una película por Id
+    function getMovieInfoById( movieId: string ) {
+        console.log({ movieId });
+    }
+
+    // función para obtener información de los actores de una película - Actors o Cast // id = movieId getMovieCast
+    function getMovieActorsById( id: string ) { // getMovieCastById
         console.log({ id });
     }
 
-    function getMovieCastById( id: string ) {
-        console.log({ id });
-    }
-
-    function getActorBioById( id: string ) {
-        console.log({ id });
+    // funcion para obtener el bio del actor por el id
+    function getActorBioById( actorId: string ) {
+        console.log({ ActorId: actorId });
     }
     
+    // Crear una película
     interface Movie {
-        cast:        string[];
-        description: string;
-        rating:      number;
-        title:       string;
+        cast: String[];
+        description: String;
+        rating: number;
+        title: string
     }
-
-    function createMovie({ title, description, rating, cast }: Movie) {
+    function createMovie({title, description, rating, cast}: Movie) {
         console.log({ title, description, rating, cast });
     }
 
+    // Crea un nuevo actor
     function createActor( fullName: string, birthdate: Date ): boolean {
         
-
+        // tarea asincrona para verificar nombre
+        // ..
+        // ..
         if ( fullName === 'fernando' ) return false;
 
-        console.log('Crear actor', birthdate);
+        console.log('Crear actor');
         return true;        
 
     }
 
     
+    const getPayAmount = ({ isDead = false, isSeparated = true, isRetired = false }): number => {
+        if ( isDead ) {
+            return 1500;
+        } 
+        if ( isSeparated ) {
+            return 2500;
+        }
 
+        return isRetired ? 3000 : 4000;
+    }
 
 })();
-
-
-
-
